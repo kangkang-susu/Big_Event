@@ -1,0 +1,52 @@
+.left-icon {
+    margin-right: 10px
+}
+
+.layui-footer {
+    text-align: center;
+    /* line-height: 30px; */
+    font-size: 10px;
+}
+
+iframe {
+    height: 100%;
+    width: 100%;
+}
+
+.left-user-header {
+    text-align: center;
+    /* line-height: 30px; */
+    /* font-size: 20px; */
+    height: 60px;
+    line-height: 60px;
+    font-size: 15px;
+    /* 该属性可以设置该盒子禁止被用户选中 */
+    user-select: none;
+    /* 单行文本超出显示隐藏 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.layui-side-scroll .left-user-header {
+    border-bottom: solid 1px #282B33
+}
+
+.text-avatar {
+    display: inline-block;
+    border-radius: 50%;
+    width: 40px;
+    background-color: aquamarine;
+}
+
+.layui-nav-img {
+    display: none;
+    height: 40px;
+    width: 40px;
+}
+
+.middle {
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}

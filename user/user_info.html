@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/css/user/user_info.css">
+    <link rel="stylesheet" href="/assets/lib/layui/css/layui.css">
+    <script src="/assets/lib/jquery.js"></script>
+    <script src="/assets/lib/layui/layui.all.js"></script>
+    <script src="/assets/js/baseAPI.js"></script>
+    <script src="/assets/js/user_info.js"></script>
+
+</head>
+
+<body>
+    <div class="main-box">
+        <!-- 添加layui中的卡片组件 -->
+        <div class="layui-card">
+            <div class="layui-card-header">卡片面板</div>
+            <div class="layui-card-body">
+                <form class="layui-form" id="form-id" lay-filter="userInfo">
+                    <!-- 在这里添加一个input隐藏域的目的是为了提交的时候能直接提交用户id，免去再次发送请求获取id -->
+                    <input type="hidden" name="id">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">用户名</label>
+                        <div class="layui-input-block">
+                            <input type="text" readonly name="username" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">用户昵称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="nickname" required lay-verify="required|nickname" placeholder="请输入昵称" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">用户邮箱</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="email" required lay-verify="required|email" placeholder="请输入邮箱" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn" lay-submit id="submit">提交修改</button>
+                            <button type="reset" id="reset" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

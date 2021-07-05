@@ -1,0 +1,32 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f2f3f5;
+    /* background-color: aqua; */
+}
+
+.main-box {
+    width: 94%;
+    height: 300px;
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    transform: translateX(-50%);
+    /* background-color: pink; */
+}
+
+
+/* 设置form宽度 */
+
+.layui-form {
+    width: 600px;
+}
+
+.layui-form-label,
+.layui-form input[name='username'] {
+    user-select: none;
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/assets/lib/layui/css/layui.css">
+    <link rel="stylesheet" href="/assets/css/article/art_cate.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="layui-card">
+        <div class="layui-card-header">
+            <span>文章类别</span>
+            <button type="button" id="addCateBtn" class="layui-btn layui-btn-normal layui-btn-sm">添加类别</button>
+        </div>
+        <div class="layui-card-body">
+            <table class="layui-table">
+                <colgroup>
+                    <!-- 通过设置标签属性来控制table中不同列的宽度 -->
+                    <col width="500">
+                    <col width="500">
+                    <!-- 空白的话，默认为是自适应 -->
+                    <col>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>昵称</th>
+                        <th>加入时间</th>
+                        <th>签名</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script type="text/html" id="tbcList">
+        {{each data}}
+        <!-- 给tr标签添加自定义属性 id，方便我们根据 id属性发送删除该文章类别的请求 -->
+        <tr cateId="{{$value.Id}}">
+            <!-- <th class="visible">{{$value.Id}}</th> -->
+            <td>{{$value.name}}</td>
+            <td>{{$value.alias}}</td>
+            <td>
+                <button type="button" class="layui-btn layui-btn-xs edit-btn">编辑</button>
+                <button type="button" class="layui-btn layui-btn-xs layui-btn-danger">删除</button>
+
+            </td>
+        </tr>
+        {{/each}}
+    </script>
+    <script type="text/html" id="tanchu-form">
+        <form class="layui-form" style="width:95%;padding-top: 20px" id="form-add">
+            <div class="layui-form-item">
+                <label class="layui-form-label">类别名</label>
+                <div class="layui-input-block">
+                    <input type="text" name="name" required lay-verify="required" placeholder="请输入名字" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">别名</label>
+                <div class="layui-input-block">
+                    <input type="text" name="alias" required lay-verify="required" placeholder="请输入别名" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button type="submit" class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </form>
+    </script>
+    <script type="text/html" id="tanchu-form-edit">
+        <form class="layui-form" style="width:95%;padding-top: 20px" id="form-edit" lay-filter="form-edit">
+            <input type="hidden" name="Id">
+            <div class="layui-form-item">
+                <label class="layui-form-label">类别名</label>
+                <div class="layui-input-block">
+                    <input type="text" name="name" required lay-verify="required" placeholder="请输入名字" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">别名</label>
+                <div class="layui-input-block">
+                    <input type="text" name="alias" required lay-verify="required" placeholder="请输入别名" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button type="submit" class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                </div>
+            </div>
+        </form>
+    </script>
+    <script src="/assets/lib/layui/layui.all.js"></script>
+    <script src="/assets/lib/jquery.js"></script>
+    <script src="/assets/js/baseAPI.js"></script>
+    <script src="/assets/lib/template-web.js"></script>
+    <script src="/assets/js/art_cate.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f2f3f5;
+    /* background-color: aqua; */
+}
+
+.layui-card {
+    position: relative;
+    left: 50%;
+    width: 95%;
+    margin-top: 8px;
+    transform: translateX(-50%);
+}
+
+.layui-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.visible {
+    display: none;
+}
+
+.edit-btn {}
+
+
+/* .middle {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+} */
+
+
+/* table {
+    width: 100%;
+} */
